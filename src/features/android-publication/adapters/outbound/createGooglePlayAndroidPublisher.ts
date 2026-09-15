@@ -202,9 +202,11 @@ function completedPublication(
 function parseVersionCodes(body: string): readonly number[] | null {
   const parsed = parseJson(body);
   if (!isRecord(parsed) || !Array.isArray(parsed.releases)) return null;
-  const values = parsed.releases.flatMap((release) =>
-    isRecord(release) && Array.isArray(release.versionCodes) ? release.versionCodes : [],
-  );
+  const releases: readonly unknown[] = Array.from(parsed.releases, (value): unknown => value);
+  const values = releases.flatMap((release): readonly unknown[] => {
+    if (!isRecord(release) || !Array.isArray(release.versionCodes)) return [];
+    return Array.from(release.versionCodes, (value): unknown => value);
+  });
   const versionCodes = values.map(readVersionCode);
   return versionCodes.every((value): value is number => value !== null) ? versionCodes : null;
 }
