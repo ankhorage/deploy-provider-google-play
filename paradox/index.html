@@ -152,6 +152,16 @@
       <small>26 functions</small>
     </button>
   </li><li>
+    <button class="nav-button" type="button" data-target="src/features/release/adapters/outbound/googlePlayReleaseTransport.ts">
+      src/features/release/adapters/outbound/googlePlayReleaseTransport.ts
+      <small>8 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/release/utils/googlePlayReleaseModel.ts">
+      src/features/release/utils/googlePlayReleaseModel.ts
+      <small>13 functions</small>
+    </button>
+  </li><li>
     <button class="nav-button" type="button" data-target="src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts">
       src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts
       <small>3 functions</small>
@@ -193,7 +203,7 @@
       <div class="summary">
         <div><strong>2</strong><span class="muted">public exports</span></div>
         <div><strong>0</strong><span class="muted">components</span></div>
-        <div><strong>14</strong><span class="muted">modules</span></div>
+        <div><strong>16</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -234,6 +244,16 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/types/googlePlay.ts</code>, <code>src/utils/googlePlayRuntime.ts</code></p>
     <p><strong>Exports:</strong> <code>createGooglePlayReleaseAdapter</code></p>
+  </article><article class="item" data-search="src/features/release/adapters/outbound/googlePlayReleaseTransport.ts src/features/release/utils/googlePlayReleaseModel.ts src/types/googlePlay.ts src/utils/googlePlayRuntime.ts commitGooglePlayReleaseEditAsync createGooglePlayReleaseEditAsync readGooglePlayReleaseEditTrackAsync readGooglePlayReleaseSummaryAsync writeGooglePlayReleaseEditTrackAsync">
+    <h3>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/release/utils/googlePlayReleaseModel.ts</code>, <code>src/types/googlePlay.ts</code>, <code>src/utils/googlePlayRuntime.ts</code></p>
+    <p><strong>Exports:</strong> <code>commitGooglePlayReleaseEditAsync</code>, <code>createGooglePlayReleaseEditAsync</code>, <code>readGooglePlayReleaseEditTrackAsync</code>, <code>readGooglePlayReleaseSummaryAsync</code>, <code>writeGooglePlayReleaseEditTrackAsync</code></p>
+  </article><article class="item" data-search="src/features/release/utils/googlePlayReleaseModel.ts findGooglePlayRelease missingGooglePlayRelease observeGooglePlayRelease parseGooglePlayJsonRecord updateGooglePlayControlBody updateGooglePlayReleaseBody">
+    <h3>src/features/release/utils/googlePlayReleaseModel.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>findGooglePlayRelease</code>, <code>missingGooglePlayRelease</code>, <code>observeGooglePlayRelease</code>, <code>parseGooglePlayJsonRecord</code>, <code>updateGooglePlayControlBody</code>, <code>updateGooglePlayReleaseBody</code></p>
   </article><article class="item" data-search="src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts src/types/googlePlay.ts src/utils/googlePlayRuntime.ts createGooglePlaySetupAdapter">
     <h3>src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts</h3>
     <p class="muted">Referenced module</p>
@@ -381,6 +401,13 @@
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_types_googlePlay_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
+  package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
@@ -440,6 +467,13 @@
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_types_googlePlay_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
+  package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
@@ -478,6 +512,8 @@
   module_src_features_monetization_utils_googlePlayMonetizationModel_ts[&quot;src/features/monetization/utils/googlePlayMonetizationModel.ts&quot;]
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts[&quot;src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts&quot;]
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts[&quot;src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts&quot;]
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -500,6 +536,9 @@
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_types_googlePlay_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
@@ -521,6 +560,8 @@
   module_src_features_monetization_utils_googlePlayMonetizationModel_ts[&quot;src/features/monetization/utils/googlePlayMonetizationModel.ts&quot;]
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts[&quot;src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts&quot;]
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts[&quot;src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts&quot;]
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -543,6 +584,9 @@
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_features_release_utils_googlePlayReleaseModel_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_types_googlePlay_ts
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
@@ -566,6 +610,8 @@
   module_src_features_monetization_utils_googlePlayMonetizationModel_ts[&quot;src/features/monetization/utils/googlePlayMonetizationModel.ts&quot;]
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts[&quot;src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts&quot;]
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts[&quot;src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts&quot;]
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -589,6 +635,8 @@
   module_src_features_monetization_utils_googlePlayMonetizationModel_ts[&quot;src/features/monetization/utils/googlePlayMonetizationModel.ts&quot;]
   module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts[&quot;src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts&quot;]
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts[&quot;src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts&quot;]
+  module_src_features_release_adapters_outbound_googlePlayReleaseTransport_ts[&quot;src/features/release/adapters/outbound/googlePlayReleaseTransport.ts&quot;]
+  module_src_features_release_utils_googlePlayReleaseModel_ts[&quot;src/features/release/utils/googlePlayReleaseModel.ts&quot;]
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts[&quot;src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -991,6 +1039,100 @@
   </article><article class="item" data-search="failedInspection src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts ">
     <h3>failedInspection</h3>
     <p class="muted"><code>src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts:336:1</code></p>
+    <p class="empty">No description available.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-release-adapters-outbound-googleplayreleasetransport-ts" class="view" data-view="src/features/release/adapters/outbound/googlePlayReleaseTransport.ts" hidden>
+    <section class="panel">
+      <h2>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts</h2>
+      <article class="item" data-search="readGooglePlayReleaseSummaryAsync src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>readGooglePlayReleaseSummaryAsync</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:10:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="createGooglePlayReleaseEditAsync src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>createGooglePlayReleaseEditAsync</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:25:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readGooglePlayReleaseEditTrackAsync src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>readGooglePlayReleaseEditTrackAsync</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:42:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="writeGooglePlayReleaseEditTrackAsync src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>writeGooglePlayReleaseEditTrackAsync</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:58:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="commitGooglePlayReleaseEditAsync src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>commitGooglePlayReleaseEditAsync</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:75:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="appUrl src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>appUrl</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:91:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="editTrackUrl src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>editTrackUrl</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:95:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="isSuccess src/features/release/adapters/outbound/googlePlayReleaseTransport.ts ">
+    <h3>isSuccess</h3>
+    <p class="muted"><code>src/features/release/adapters/outbound/googlePlayReleaseTransport.ts:99:1</code></p>
+    <p class="empty">No description available.</p>
+  </article>
+    </section>
+  </section><section id="view-src-features-release-utils-googleplayreleasemodel-ts" class="view" data-view="src/features/release/utils/googlePlayReleaseModel.ts" hidden>
+    <section class="panel">
+      <h2>src/features/release/utils/googlePlayReleaseModel.ts</h2>
+      <article class="item" data-search="findGooglePlayRelease src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>findGooglePlayRelease</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:8:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="observeGooglePlayRelease src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>observeGooglePlayRelease</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:22:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="missingGooglePlayRelease src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>missingGooglePlayRelease</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:39:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="updateGooglePlayReleaseBody src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>updateGooglePlayReleaseBody</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:50:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="updateGooglePlayControlBody src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>updateGooglePlayControlBody</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:76:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="parseGooglePlayJsonRecord src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>parseGooglePlayJsonRecord</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:91:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readUnknownArrayFromRecord src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>readUnknownArrayFromRecord</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:100:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readUnknownArray src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>readUnknownArray</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:110:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readStringArray src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>readStringArray</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:114:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readReleaseNotes src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>readReleaseNotes</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:119:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="readRolloutStatus src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>readRolloutStatus</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:129:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="toReleaseNotes src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>toReleaseNotes</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:141:1</code></p>
+    <p class="empty">No description available.</p>
+  </article><article class="item" data-search="containsVersion src/features/release/utils/googlePlayReleaseModel.ts ">
+    <h3>containsVersion</h3>
+    <p class="muted"><code>src/features/release/utils/googlePlayReleaseModel.ts:147:1</code></p>
     <p class="empty">No description available.</p>
   </article>
     </section>

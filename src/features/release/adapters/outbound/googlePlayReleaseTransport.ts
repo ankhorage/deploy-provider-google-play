@@ -1,4 +1,3 @@
-import { isRecord } from '@ankhorage/utility/object';
 import { isNonEmptyString } from '@ankhorage/utility/string';
 
 import type { GooglePlayTransport } from '../../../../types/googlePlay.js';

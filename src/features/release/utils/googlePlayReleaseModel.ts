@@ -11,10 +11,12 @@ export function findGooglePlayRelease(
 ): Record<string, unknown> | null {
   const releases = readUnknownArrayFromRecord(value, 'releases');
   if (releases === null) return null;
-  return releases.find(
-    (release): release is Record<string, unknown> =>
-      isRecord(release) && release.name === version,
-  ) ?? null;
+  return (
+    releases.find(
+      (release): release is Record<string, unknown> =>
+        isRecord(release) && release.name === version,
+    ) ?? null
+  );
 }
 
 export function observeGooglePlayRelease(
@@ -111,9 +113,7 @@ function readUnknownArray(value: unknown): readonly unknown[] | null {
 
 function readStringArray(value: unknown): readonly string[] {
   const values = readUnknownArray(value);
-  return values === null
-    ? []
-    : values.flatMap((item) => (typeof item === 'string' ? [item] : []));
+  return values === null ? [] : values.flatMap((item) => (typeof item === 'string' ? [item] : []));
 }
 
 function readReleaseNotes(value: unknown): ReleaseObservedAndroidState['releaseNotes'] {
