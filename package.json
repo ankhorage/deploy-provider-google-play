@@ -17,8 +17,8 @@
   "files": ["dist", "README.md", "CHANGELOG.md", "LICENSE", "paradox"],
   "exports": {
     ".": {
-      "types": "./dist/deployProviderGooglePlay.d.ts",
-      "import": "./dist/deployProviderGooglePlay.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
