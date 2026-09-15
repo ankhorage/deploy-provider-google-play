@@ -8,15 +8,15 @@ const serviceAccount = JSON.stringify({
   private_key: 'secret',
 });
 
-const resolveSecret = async () => serviceAccount;
-const createToken = async () => 'token';
+const resolveSecret = () => Promise.resolve(serviceAccount);
+const createToken = () => Promise.resolve('token');
 
-describe('createGooglePlayDeploymentProvider', () => {
-  it('registers every Google Play deployment capability without a Deploy dependency', () => {
+describe('Google Play provider registration', () => {
+  it('registers every deployment capability without a Deploy dependency', () => {
     const provider = createGooglePlayDeploymentProvider({
       createToken,
-      request: async () => ({ status: 200, body: '{}' }),
-      downloadArtifact: async () => new Uint8Array(),
+      request: () => Promise.resolve({ status: 200, body: '{}' }),
+      downloadArtifact: () => Promise.resolve(new Uint8Array()),
     });
 
     expect(provider.descriptor).toEqual({
@@ -38,27 +38,32 @@ describe('createGooglePlayDeploymentProvider', () => {
     expect(provider.release).toBeDefined();
     expect(provider.androidBuilder).toBeUndefined();
   });
+});
 
-  it('reports missing Google Play authentication through the setup port', async () => {
+describe('Google Play setup', () => {
+  it('reports missing authentication through the setup port', async () => {
     const provider = createGooglePlayDeploymentProvider({ createToken });
     const inspection = await provider.setup?.inspectSetup({
       projectRoot: '/app',
       target: 'android',
       credentials: [],
-      resolveSecret: async () => null,
+      resolveSecret: () => Promise.resolve(null),
     });
 
     expect(inspection?.authentication.status).toBe('required');
     expect(inspection?.provisioning).toHaveLength(1);
   });
+});
 
+describe('Google Play publication', () => {
   it('normalizes Android track inspection through the public publisher port', async () => {
     const provider = createGooglePlayDeploymentProvider({
       createToken,
-      request: async () => ({
-        status: 200,
-        body: JSON.stringify({ releases: [{ versionCodes: ['7', '8'], status: 'completed' }] }),
-      }),
+      request: () =>
+        Promise.resolve({
+          status: 200,
+          body: JSON.stringify({ releases: [{ versionCodes: ['7', '8'], status: 'completed' }] }),
+        }),
     });
     const inspection = await provider.androidPublisher?.inspectAsync({
       packageName: 'com.example.app',
