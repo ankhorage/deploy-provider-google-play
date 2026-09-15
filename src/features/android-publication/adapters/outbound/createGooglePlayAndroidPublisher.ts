@@ -21,7 +21,8 @@ import {
 } from '../../../../utils/googlePlayRuntime.js';
 
 const API = 'https://androidpublisher.googleapis.com/androidpublisher/v3/applications';
-const UPLOAD_API = 'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
+const UPLOAD_API =
+  'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
 
 export function createGooglePlayAndroidPublisher(options: {
   readonly createToken: GooglePlayTokenFactory;
@@ -39,7 +40,10 @@ async function inspectAsync(
   request: AndroidPublishInspectionRequest,
   options: Pick<Parameters<typeof createGooglePlayAndroidPublisher>[0], 'createToken' | 'request'>,
 ): Promise<DeploymentProviderResult<AndroidPublishInspection>> {
-  const access = await resolveGooglePlayAccessTokenAsync({ ...request, createToken: options.createToken });
+  const access = await resolveGooglePlayAccessTokenAsync({
+    ...request,
+    createToken: options.createToken,
+  });
   if (!access.ok) return { status: 'action-required', action: access.action };
   const response = await safeGooglePlayRequest(options.request, {
     method: 'GET',
@@ -60,7 +64,10 @@ async function publishAsync(
   request: AndroidPublishRequest,
   options: Parameters<typeof createGooglePlayAndroidPublisher>[0],
 ): Promise<DeploymentProviderResult<AndroidDeploymentPublication>> {
-  const access = await resolveGooglePlayAccessTokenAsync({ ...request, createToken: options.createToken });
+  const access = await resolveGooglePlayAccessTokenAsync({
+    ...request,
+    createToken: options.createToken,
+  });
   if (!access.ok) return { status: 'action-required', action: access.action };
   const archive = await safelyDownload(options.downloadArtifact, request.artifact.archiveUrl);
   if (archive === null) return failedPublication('ANDROID_ARCHIVE_DOWNLOAD_FAILED');
@@ -76,11 +83,14 @@ async function publishArchiveAsync(
   const editId = await createEditAsync(request.packageName, token, transport);
   if (editId === null) return failedPublication('GOOGLE_PLAY_EDIT_CREATE_FAILED');
   const uploaded = await uploadBundleAsync(request.packageName, editId, token, archive, transport);
-  if (uploaded !== request.artifact.versionCode) return failedPublication('GOOGLE_PLAY_VERSION_MISMATCH');
+  if (uploaded !== request.artifact.versionCode)
+    return failedPublication('GOOGLE_PLAY_VERSION_MISMATCH');
   const trackUpdated = await updateTrackAsync(request, editId, token, transport);
   if (!trackUpdated) return failedPublication('GOOGLE_PLAY_TRACK_UPDATE_FAILED');
   const committed = await commitEditAsync(request.packageName, editId, token, transport);
-  return committed ? completedPublication(request) : failedPublication('GOOGLE_PLAY_EDIT_COMMIT_FAILED');
+  return committed
+    ? completedPublication(request)
+    : failedPublication('GOOGLE_PLAY_EDIT_COMMIT_FAILED');
 }
 
 async function verifyAsync(
@@ -127,7 +137,9 @@ async function uploadBundleAsync(
   });
   if (response === null || !isSuccess(response.status)) return null;
   const parsed = parseJson(response.body);
-  return isRecord(parsed) && typeof parsed.versionCode === 'number' && Number.isSafeInteger(parsed.versionCode)
+  return isRecord(parsed) &&
+    typeof parsed.versionCode === 'number' &&
+    Number.isSafeInteger(parsed.versionCode)
     ? parsed.versionCode
     : null;
 }
@@ -145,7 +157,9 @@ async function updateTrackAsync(
     contentType: 'application/json',
     body: JSON.stringify({
       track: request.track,
-      releases: [{ versionCodes: [String(request.artifact.versionCode)], status: request.releaseStatus }],
+      releases: [
+        { versionCodes: [String(request.artifact.versionCode)], status: request.releaseStatus },
+      ],
     }),
   });
   return response !== null && isSuccess(response.status);
@@ -167,7 +181,9 @@ async function commitEditAsync(
   return response !== null && isSuccess(response.status);
 }
 
-function completedPublication(request: AndroidPublishRequest): DeploymentProviderResult<AndroidDeploymentPublication> {
+function completedPublication(
+  request: AndroidPublishRequest,
+): DeploymentProviderResult<AndroidDeploymentPublication> {
   return {
     status: 'completed',
     value: {
@@ -194,36 +210,83 @@ function parseVersionCodes(body: string): readonly number[] | null {
 }
 
 function readVersionCode(value: unknown): number | null {
-  const parsed = typeof value === 'number' ? value : typeof value === 'string' ? Number(value) : NaN;
+  const parsed =
+    typeof value === 'number' ? value : typeof value === 'string' ? Number(value) : NaN;
   return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
 }
 
 function blockedResult<T>(status: number): DeploymentProviderResult<T> | null {
-  const action = status === 401 ? authenticationAction() : status === 403 ? permissionAction() : status === 404 ? bootstrapAction() : null;
+  const action =
+    status === 401
+      ? authenticationAction()
+      : status === 403
+        ? permissionAction()
+        : status === 404
+          ? bootstrapAction()
+          : null;
   return action === null ? null : { status: 'action-required', action };
 }
 
 function authenticationAction(): DeploymentRequiredAction {
-  return { type: 'authentication', provider: 'google-play', target: 'android', code: 'GOOGLE_PLAY_AUTHENTICATION_REQUIRED', message: 'Google Play authentication is required for Android deployment.' };
+  return {
+    type: 'authentication',
+    provider: 'google-play',
+    target: 'android',
+    code: 'GOOGLE_PLAY_AUTHENTICATION_REQUIRED',
+    message: 'Google Play authentication is required for Android deployment.',
+  };
 }
 
 function permissionAction(): DeploymentRequiredAction {
-  return { type: 'manual-action', provider: 'google-play', target: 'android', code: 'GOOGLE_PLAY_PERMISSION_REQUIRED', message: 'Grant the service account permission to manage this application in Google Play Console.' };
+  return {
+    type: 'manual-action',
+    provider: 'google-play',
+    target: 'android',
+    code: 'GOOGLE_PLAY_PERMISSION_REQUIRED',
+    message:
+      'Grant the service account permission to manage this application in Google Play Console.',
+  };
 }
 
 function bootstrapAction(): DeploymentRequiredAction {
-  return { type: 'manual-action', provider: 'google-play', target: 'android', code: 'GOOGLE_PLAY_APP_BOOTSTRAP_REQUIRED', message: 'Create and bootstrap the Android application in Google Play Console before API delivery.' };
+  return {
+    type: 'manual-action',
+    provider: 'google-play',
+    target: 'android',
+    code: 'GOOGLE_PLAY_APP_BOOTSTRAP_REQUIRED',
+    message:
+      'Create and bootstrap the Android application in Google Play Console before API delivery.',
+  };
 }
 
 function failedInspection(code: string): DeploymentProviderResult<AndroidPublishInspection> {
-  return { status: 'failed', failure: { code, message: 'Google Play release state could not be inspected.', target: 'android', provider: 'google-play' } };
+  return {
+    status: 'failed',
+    failure: {
+      code,
+      message: 'Google Play release state could not be inspected.',
+      target: 'android',
+      provider: 'google-play',
+    },
+  };
 }
 
 function failedPublication(code: string): DeploymentProviderResult<AndroidDeploymentPublication> {
-  return { status: 'failed', failure: { code, message: 'Google Play Android publication failed.', target: 'android', provider: 'google-play' } };
+  return {
+    status: 'failed',
+    failure: {
+      code,
+      message: 'Google Play Android publication failed.',
+      target: 'android',
+      provider: 'google-play',
+    },
+  };
 }
 
-async function safelyDownload(download: GooglePlayArtifactDownloader, url: string): Promise<Uint8Array | null> {
+async function safelyDownload(
+  download: GooglePlayArtifactDownloader,
+  url: string,
+): Promise<Uint8Array | null> {
   try {
     return await download(url);
   } catch {

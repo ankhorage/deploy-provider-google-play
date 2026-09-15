@@ -12,10 +12,14 @@ import { isRecord } from '@ankhorage/utility/object';
 import { isNonEmptyString } from '@ankhorage/utility/string';
 
 import type { GooglePlayTokenFactory, GooglePlayTransport } from '../../../../types/googlePlay.js';
-import { resolveGooglePlayAccessTokenAsync, safeGooglePlayRequest } from '../../../../utils/googlePlayRuntime.js';
+import {
+  resolveGooglePlayAccessTokenAsync,
+  safeGooglePlayRequest,
+} from '../../../../utils/googlePlayRuntime.js';
 
 const API = 'https://androidpublisher.googleapis.com/androidpublisher/v3/applications';
-const UPLOAD_API = 'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
+const UPLOAD_API =
+  'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
 const SUPPORTED_FIELDS = ['name', 'summary', 'description', 'promoVideoUrl'] as const;
 const IMAGE_VARIANTS = [
   ['icon', 'icon'],
@@ -43,13 +47,23 @@ async function inspectAsync(
   options: Parameters<typeof createGooglePlayStoreListingAdapter>[0],
 ): Promise<DeploymentProviderResult<StoreListingTargetState>> {
   if (context.identity.target !== 'android') return failed('GOOGLE_PLAY_IDENTITY_INVALID');
-  const access = await resolveGooglePlayAccessTokenAsync({ ...context, createToken: options.createToken });
+  const access = await resolveGooglePlayAccessTokenAsync({
+    ...context,
+    createToken: options.createToken,
+  });
   if (!access.ok) return { status: 'action-required', action: access.action };
   const editId = await createEditAsync(context.identity.packageName, access.token, options.request);
   if (editId === null) return failed('GOOGLE_PLAY_EDIT_CREATE_FAILED');
-  const state = await readStateAsync(context.identity.packageName, editId, access.token, options.request);
+  const state = await readStateAsync(
+    context.identity.packageName,
+    editId,
+    access.token,
+    options.request,
+  );
   await discardEditAsync(context.identity.packageName, editId, access.token, options.request);
-  return state === null ? failed('GOOGLE_PLAY_LISTING_INSPECTION_FAILED') : { status: 'completed', value: state };
+  return state === null
+    ? failed('GOOGLE_PLAY_LISTING_INSPECTION_FAILED')
+    : { status: 'completed', value: state };
 }
 
 async function syncAsync(
@@ -59,13 +73,21 @@ async function syncAsync(
   if (request.identity.target !== 'android') return failed('GOOGLE_PLAY_IDENTITY_INVALID');
   if (request.plan.status === 'blocked') return failed('GOOGLE_PLAY_LISTING_PLAN_BLOCKED');
   if (request.plan.status === 'no-change') return inspectAsync(request, options);
-  const access = await resolveGooglePlayAccessTokenAsync({ ...request, createToken: options.createToken });
+  const access = await resolveGooglePlayAccessTokenAsync({
+    ...request,
+    createToken: options.createToken,
+  });
   if (!access.ok) return { status: 'action-required', action: access.action };
   const editId = await createEditAsync(request.identity.packageName, access.token, options.request);
   if (editId === null) return failed('GOOGLE_PLAY_EDIT_CREATE_FAILED');
   const synced = await executePlanAsync(request, editId, access.token, options.request);
   if (!synced) return failed('GOOGLE_PLAY_LISTING_SYNC_FAILED');
-  const committed = await commitEditAsync(request.identity.packageName, editId, access.token, options.request);
+  const committed = await commitEditAsync(
+    request.identity.packageName,
+    editId,
+    access.token,
+    options.request,
+  );
   return committed ? inspectAsync(request, options) : failed('GOOGLE_PLAY_EDIT_COMMIT_FAILED');
 }
 
@@ -77,9 +99,10 @@ async function executePlanAsync(
 ): Promise<boolean> {
   for (const step of request.plan.steps) {
     if (step.target !== 'android') continue;
-    const success = step.operation === 'replace-assets'
-      ? await replaceAssetsAsync(request, step.locale, step.variant, editId, token, transport)
-      : await writeLocaleAsync(request, step.locale, editId, token, transport);
+    const success =
+      step.operation === 'replace-assets'
+        ? await replaceAssetsAsync(request, step.locale, step.variant, editId, token, transport)
+        : await writeLocaleAsync(request, step.locale, editId, token, transport);
     if (!success) return false;
   }
   return true;
@@ -118,7 +141,14 @@ async function replaceAssetsAsync(
     (item) => item.target === 'android' && item.locale === locale && item.variant === variant,
   );
   if (imageType === null || set === undefined) return false;
-  const cleared = await clearImagesAsync(request.identity.packageName, editId, locale, imageType, token, transport);
+  const cleared = await clearImagesAsync(
+    request.identity.packageName,
+    editId,
+    locale,
+    imageType,
+    token,
+    transport,
+  );
   return cleared && uploadAssetsAsync(request, set, editId, imageType, token, transport);
 }
 
@@ -198,18 +228,23 @@ async function readAssetSetAsync(
   });
   if (response === null || !isSuccess(response.status)) return null;
   const hashes = parseImageHashes(response.body);
-  return hashes === null ? null : { target: 'android', locale, variant, checksum: 'sha256', hashes };
+  return hashes === null
+    ? null
+    : { target: 'android', locale, variant, checksum: 'sha256', hashes };
 }
 
 function parseListings(body: string): readonly StoreListingLocale[] | null {
   const parsed = parseJson(body);
   if (!isRecord(parsed) || !Array.isArray(parsed.listings)) return null;
   const listings = parsed.listings.map(parseListing);
-  return listings.every((listing): listing is StoreListingLocale => listing !== null) ? listings : null;
+  return listings.every((listing): listing is StoreListingLocale => listing !== null)
+    ? listings
+    : null;
 }
 
 function parseListing(value: unknown): StoreListingLocale | null {
-  if (!isRecord(value) || !isNonEmptyString(value.language) || !isNonEmptyString(value.title)) return null;
+  if (!isRecord(value) || !isNonEmptyString(value.language) || !isNonEmptyString(value.title))
+    return null;
   return {
     locale: value.language,
     name: value.title,
@@ -222,7 +257,9 @@ function parseListing(value: unknown): StoreListingLocale | null {
 function parseImageHashes(body: string): readonly string[] | null {
   const parsed = parseJson(body);
   if (!isRecord(parsed) || !Array.isArray(parsed.images)) return null;
-  const hashes = parsed.images.map((image) => (isRecord(image) && isNonEmptyString(image.sha256) ? image.sha256 : null));
+  const hashes = parsed.images.map((image) =>
+    isRecord(image) && isNonEmptyString(image.sha256) ? image.sha256 : null,
+  );
   return hashes.every((hash): hash is string => hash !== null) ? hashes : null;
 }
 
@@ -236,25 +273,66 @@ function toGoogleListing(locale: StoreListingLocale): Readonly<Record<string, st
   };
 }
 
-async function clearImagesAsync(packageName: string, editId: string, locale: string, imageType: string, token: string, transport: GooglePlayTransport): Promise<boolean> {
-  const response = await safeGooglePlayRequest(transport, { method: 'DELETE', url: imagesUrl(packageName, editId, locale, imageType), token });
+async function clearImagesAsync(
+  packageName: string,
+  editId: string,
+  locale: string,
+  imageType: string,
+  token: string,
+  transport: GooglePlayTransport,
+): Promise<boolean> {
+  const response = await safeGooglePlayRequest(transport, {
+    method: 'DELETE',
+    url: imagesUrl(packageName, editId, locale, imageType),
+    token,
+  });
   return response !== null && isSuccess(response.status);
 }
 
-async function createEditAsync(packageName: string, token: string, transport: GooglePlayTransport): Promise<string | null> {
-  const response = await safeGooglePlayRequest(transport, { method: 'POST', url: `${appUrl(packageName)}/edits`, token, contentType: 'application/json', body: '{}' });
+async function createEditAsync(
+  packageName: string,
+  token: string,
+  transport: GooglePlayTransport,
+): Promise<string | null> {
+  const response = await safeGooglePlayRequest(transport, {
+    method: 'POST',
+    url: `${appUrl(packageName)}/edits`,
+    token,
+    contentType: 'application/json',
+    body: '{}',
+  });
   if (response === null || !isSuccess(response.status)) return null;
   const parsed = parseJson(response.body);
   return isRecord(parsed) && isNonEmptyString(parsed.id) ? parsed.id : null;
 }
 
-async function commitEditAsync(packageName: string, editId: string, token: string, transport: GooglePlayTransport): Promise<boolean> {
-  const response = await safeGooglePlayRequest(transport, { method: 'POST', url: `${appUrl(packageName)}/edits/${encodeURIComponent(editId)}:commit`, token, contentType: 'application/json', body: '{}' });
+async function commitEditAsync(
+  packageName: string,
+  editId: string,
+  token: string,
+  transport: GooglePlayTransport,
+): Promise<boolean> {
+  const response = await safeGooglePlayRequest(transport, {
+    method: 'POST',
+    url: `${appUrl(packageName)}/edits/${encodeURIComponent(editId)}:commit`,
+    token,
+    contentType: 'application/json',
+    body: '{}',
+  });
   return response !== null && isSuccess(response.status);
 }
 
-async function discardEditAsync(packageName: string, editId: string, token: string, transport: GooglePlayTransport): Promise<void> {
-  await safeGooglePlayRequest(transport, { method: 'DELETE', url: `${appUrl(packageName)}/edits/${encodeURIComponent(editId)}`, token });
+async function discardEditAsync(
+  packageName: string,
+  editId: string,
+  token: string,
+  transport: GooglePlayTransport,
+): Promise<void> {
+  await safeGooglePlayRequest(transport, {
+    method: 'DELETE',
+    url: `${appUrl(packageName)}/edits/${encodeURIComponent(editId)}`,
+    token,
+  });
 }
 
 function imageTypeFor(variant: string): string | null {
@@ -273,7 +351,12 @@ function imagesUrl(packageName: string, editId: string, locale: string, imageTyp
   return `${listingUrl(packageName, editId, locale)}/${encodeURIComponent(imageType)}`;
 }
 
-function uploadImageUrl(packageName: string, editId: string, locale: string, imageType: string): string {
+function uploadImageUrl(
+  packageName: string,
+  editId: string,
+  locale: string,
+  imageType: string,
+): string {
   return `${UPLOAD_API}/${encodeURIComponent(packageName)}/edits/${encodeURIComponent(editId)}/listings/${encodeURIComponent(locale)}/${encodeURIComponent(imageType)}?uploadType=media`;
 }
 
@@ -290,5 +373,13 @@ function parseJson(value: string): unknown {
 }
 
 function failed(code: string): DeploymentProviderResult<StoreListingTargetState> {
-  return { status: 'failed', failure: { code, message: 'Google Play store listing operation failed.', target: 'android', provider: 'google-play' } };
+  return {
+    status: 'failed',
+    failure: {
+      code,
+      message: 'Google Play store listing operation failed.',
+      target: 'android',
+      provider: 'google-play',
+    },
+  };
 }

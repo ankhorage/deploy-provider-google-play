@@ -1,0 +1,17 @@
+graph LR
+  module_paradox_config_ts["paradox.config.ts"]
+  module_src_features_android_publication_adapters_outbound_createGooglePlayAndroidPublisher_ts["src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts"]
+  module_src_features_monetization_adapters_outbound_createGooglePlayMonetizationAdapter_ts["src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"]
+  module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts["src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts"]
+  module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts["src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts"]
+  module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts["src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts"]
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts["src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts"]
+  module_src_index_test_ts["src/index.test.ts"]
+  module_src_index_ts["src/index.ts"]
+  module_src_types_googlePlay_ts["src/types/googlePlay.ts"]
+  module_src_utils_googlePlayRuntime_ts["src/utils/googlePlayRuntime.ts"]
+  export_createGooglePlayDeploymentProvider["createGooglePlayDeploymentProvider"]
+  module_src_features_provider_registration_composition_createGooglePlayDeploymentProvider_ts --> export_createGooglePlayDeploymentProvider
+  export_createGooglePlayDeploymentProvider -.-> export_GooglePlayDeploymentProviderOptions
+  export_GooglePlayDeploymentProviderOptions["GooglePlayDeploymentProviderOptions"]
+  module_src_types_googlePlay_ts --> export_GooglePlayDeploymentProviderOptions

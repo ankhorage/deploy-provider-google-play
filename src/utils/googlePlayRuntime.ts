@@ -1,5 +1,3 @@
-import { GoogleAuth } from 'google-auth-library';
-
 import type {
   DeploymentAuthenticationRequiredAction,
   DeploymentCredentialReference,
@@ -7,6 +5,7 @@ import type {
 } from '@ankhorage/contracts/deploy-provider';
 import { isRecord } from '@ankhorage/utility/object';
 import { isNonEmptyString } from '@ankhorage/utility/string';
+import { GoogleAuth } from 'google-auth-library';
 
 import type {
   GooglePlayArtifactDownloader,
@@ -88,7 +87,8 @@ function parseServiceAccount(value: string | null): GooglePlayServiceAccountCred
   try {
     const parsed: unknown = JSON.parse(value);
     if (!isRecord(parsed) || parsed.type !== 'service_account') return null;
-    if (!isNonEmptyString(parsed.client_email) || !isNonEmptyString(parsed.private_key)) return null;
+    if (!isNonEmptyString(parsed.client_email) || !isNonEmptyString(parsed.private_key))
+      return null;
     return { clientEmail: parsed.client_email, privateKey: parsed.private_key };
   } catch {
     return null;
