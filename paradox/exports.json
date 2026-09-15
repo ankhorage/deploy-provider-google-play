@@ -1,0 +1,74 @@
+[
+  {
+    "name": "createGooglePlayDeploymentProvider",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts",
+    "sourceLocation": {
+      "filePath": "src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts",
+      "line": 15,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["GooglePlayDeploymentProviderOptions"],
+    "signatures": [
+      {
+        "label": "(options?: GooglePlayDeploymentProviderOptions) => DeploymentProviderRegistration",
+        "parameters": [
+          {
+            "name": "options",
+            "type": "GooglePlayDeploymentProviderOptions",
+            "required": false,
+            "description": null
+          }
+        ],
+        "returnType": "DeploymentProviderRegistration",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "GooglePlayDeploymentProviderOptions",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/googlePlay.ts",
+    "sourceLocation": {
+      "filePath": "src/types/googlePlay.ts",
+      "line": 27,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "createToken",
+        "kind": "property",
+        "type": "GooglePlayTokenFactory",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "downloadArtifact",
+        "kind": "property",
+        "type": "GooglePlayArtifactDownloader",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "request",
+        "kind": "property",
+        "type": "GooglePlayTransport",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  }
+]

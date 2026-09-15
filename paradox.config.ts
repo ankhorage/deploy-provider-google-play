@@ -8,7 +8,7 @@ export default defineParadoxConfig({
   },
   package: {
     root: '.',
-    entrypoints: ['src/deployProviderGooglePlay.ts'],
+    entrypoints: ['src/index.ts'],
   },
   output: { dir: './paradox' },
 });
