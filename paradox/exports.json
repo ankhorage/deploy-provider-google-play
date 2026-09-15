@@ -11,12 +11,8 @@
       "line": 15,
       "column": 1
     },
-    "exportPaths": [
-      "src/index.ts"
-    ],
-    "relatedSymbols": [
-      "GooglePlayDeploymentProviderOptions"
-    ],
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["GooglePlayDeploymentProviderOptions"],
     "signatures": [
       {
         "label": "(options?: GooglePlayDeploymentProviderOptions) => DeploymentProviderRegistration",
@@ -47,9 +43,7 @@
       "line": 27,
       "column": 1
     },
-    "exportPaths": [
-      "src/index.ts"
-    ],
+    "exportPaths": ["src/index.ts"],
     "relatedSymbols": [],
     "signatures": [],
     "members": [

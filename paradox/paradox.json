@@ -66,28 +66,19 @@
   "readmeCli": null,
   "readmeConfig": null,
   "config": null,
-  "entrypoints": [
-    "src/index.ts"
-  ],
+  "entrypoints": ["src/index.ts"],
   "modules": [
     {
       "path": "paradox.config.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": [
-        "default"
-      ]
+      "exports": ["default"]
     },
     {
       "path": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
       "isEntrypoint": false,
-      "dependencies": [
-        "src/types/googlePlay.ts",
-        "src/utils/googlePlayRuntime.ts"
-      ],
-      "exports": [
-        "createGooglePlayAndroidPublisher"
-      ]
+      "dependencies": ["src/types/googlePlay.ts", "src/utils/googlePlayRuntime.ts"],
+      "exports": ["createGooglePlayAndroidPublisher"]
     },
     {
       "path": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
@@ -97,9 +88,7 @@
         "src/types/googlePlay.ts",
         "src/utils/googlePlayRuntime.ts"
       ],
-      "exports": [
-        "createGooglePlayMonetizationAdapter"
-      ]
+      "exports": ["createGooglePlayMonetizationAdapter"]
     },
     {
       "path": "src/features/monetization/utils/googlePlayMonetizationModel.ts",
@@ -125,9 +114,7 @@
         "src/types/googlePlay.ts",
         "src/utils/googlePlayRuntime.ts"
       ],
-      "exports": [
-        "createGooglePlayDeploymentProvider"
-      ]
+      "exports": ["createGooglePlayDeploymentProvider"]
     },
     {
       "path": "src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts",
@@ -138,9 +125,7 @@
         "src/types/googlePlay.ts",
         "src/utils/googlePlayRuntime.ts"
       ],
-      "exports": [
-        "createGooglePlayReleaseAdapter"
-      ]
+      "exports": ["createGooglePlayReleaseAdapter"]
     },
     {
       "path": "src/features/release/adapters/outbound/googlePlayReleaseTransport.ts",
@@ -174,13 +159,8 @@
     {
       "path": "src/features/setup/adapters/outbound/createGooglePlaySetupAdapter.ts",
       "isEntrypoint": false,
-      "dependencies": [
-        "src/types/googlePlay.ts",
-        "src/utils/googlePlayRuntime.ts"
-      ],
-      "exports": [
-        "createGooglePlaySetupAdapter"
-      ]
+      "dependencies": ["src/types/googlePlay.ts", "src/utils/googlePlayRuntime.ts"],
+      "exports": ["createGooglePlaySetupAdapter"]
     },
     {
       "path": "src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts",
@@ -191,9 +171,7 @@
         "src/types/googlePlay.ts",
         "src/utils/googlePlayRuntime.ts"
       ],
-      "exports": [
-        "createGooglePlayStoreListingAdapter"
-      ]
+      "exports": ["createGooglePlayStoreListingAdapter"]
     },
     {
       "path": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
@@ -229,19 +207,14 @@
     {
       "path": "src/index.test.ts",
       "isEntrypoint": false,
-      "dependencies": [
-        "src/index.ts"
-      ],
+      "dependencies": ["src/index.ts"],
       "exports": []
     },
     {
       "path": "src/index.ts",
       "isEntrypoint": true,
       "dependencies": [],
-      "exports": [
-        "createGooglePlayDeploymentProvider",
-        "GooglePlayDeploymentProviderOptions"
-      ]
+      "exports": ["createGooglePlayDeploymentProvider", "GooglePlayDeploymentProviderOptions"]
     },
     {
       "path": "src/types/googlePlay.ts",
@@ -260,9 +233,7 @@
     {
       "path": "src/utils/googlePlayRuntime.ts",
       "isEntrypoint": false,
-      "dependencies": [
-        "src/types/googlePlay.ts"
-      ],
+      "dependencies": ["src/types/googlePlay.ts"],
       "exports": [
         "createGooglePlayAccessToken",
         "downloadGooglePlayArtifact",
@@ -286,12 +257,8 @@
         "line": 15,
         "column": 1
       },
-      "exportPaths": [
-        "src/index.ts"
-      ],
-      "relatedSymbols": [
-        "GooglePlayDeploymentProviderOptions"
-      ],
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["GooglePlayDeploymentProviderOptions"],
       "signatures": [
         {
           "label": "(options?: GooglePlayDeploymentProviderOptions) => DeploymentProviderRegistration",
@@ -322,9 +289,7 @@
         "line": 27,
         "column": 1
       },
-      "exportPaths": [
-        "src/index.ts"
-      ],
+      "exportPaths": ["src/index.ts"],
       "relatedSymbols": [],
       "signatures": [],
       "members": [

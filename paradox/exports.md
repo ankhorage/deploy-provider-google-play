@@ -20,8 +20,8 @@ Source: `src/types/googlePlay.ts:27:1`
 
 ### Members
 
-| Name | Kind | Type | Required | Description |
-| --- | --- | --- | --- | --- |
-| createToken | property | `GooglePlayTokenFactory` | no |  |
-| downloadArtifact | property | `GooglePlayArtifactDownloader` | no |  |
-| request | property | `GooglePlayTransport` | no |  |
+| Name             | Kind     | Type                           | Required | Description |
+| ---------------- | -------- | ------------------------------ | -------- | ----------- |
+| createToken      | property | `GooglePlayTokenFactory`       | no       |             |
+| downloadArtifact | property | `GooglePlayArtifactDownloader` | no       |             |
+| request          | property | `GooglePlayTransport`          | no       |             |
