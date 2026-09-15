@@ -59,9 +59,10 @@ async function inspectAsync(
   const release = findGooglePlayRelease(summary, request.version);
   return {
     status: 'completed',
-    value: release === null
-      ? missingGooglePlayRelease()
-      : observeGooglePlayRelease(request.version, release),
+    value:
+      release === null
+        ? missingGooglePlayRelease()
+        : observeGooglePlayRelease(request.version, release),
   };
 }
 
@@ -154,12 +155,15 @@ async function mutateControlAsync(
     body: updated,
     transport,
   });
-  return written && commitGooglePlayReleaseEditAsync({
-    packageName: request.identity.packageName,
-    editId: context.editId,
-    token,
-    transport,
-  });
+  return (
+    written &&
+    commitGooglePlayReleaseEditAsync({
+      packageName: request.identity.packageName,
+      editId: context.editId,
+      token,
+      transport,
+    })
+  );
 }
 
 interface ReleaseEditContext {
