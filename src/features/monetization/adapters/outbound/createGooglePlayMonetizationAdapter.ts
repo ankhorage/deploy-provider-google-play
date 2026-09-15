@@ -74,9 +74,7 @@ async function syncAsync(
   });
   if (!access.ok) return { status: 'action-required', action: access.action };
   const synced = await executePlanAsync(request, access.token, options.request);
-  return synced
-    ? inspectAsync(request, options)
-    : failed('GOOGLE_PLAY_MONETIZATION_SYNC_FAILED');
+  return synced ? inspectAsync(request, options) : failed('GOOGLE_PLAY_MONETIZATION_SYNC_FAILED');
 }
 
 async function executePlanAsync(
@@ -88,7 +86,14 @@ async function executePlanAsync(
     if (step.target !== 'android' || step.operation === 'ensure-subscription-family') continue;
     const product = request.desired.products.find((item) => item.id === step.productId);
     if (product === undefined) return false;
-    if (!(await upsertProductAsync(request.identity.target === 'android' ? request.identity.packageName : '', product, token, transport))) {
+    if (
+      !(await upsertProductAsync(
+        request.identity.target === 'android' ? request.identity.packageName : '',
+        product,
+        token,
+        transport,
+      ))
+    ) {
       return false;
     }
   }
@@ -103,9 +108,10 @@ async function upsertProductAsync(
 ): Promise<boolean> {
   const converted = await convertPriceAsync(packageName, product.basePrice, token, transport);
   if (converted === null) return false;
-  const request = product.kind === 'subscription'
-    ? subscriptionRequest(packageName, product, converted)
-    : oneTimeRequest(packageName, product, converted);
+  const request =
+    product.kind === 'subscription'
+      ? subscriptionRequest(packageName, product, converted)
+      : oneTimeRequest(packageName, product, converted);
   const response = await safeGooglePlayRequest(transport, { ...request, token });
   return response !== null && isSuccess(response.status);
 }
@@ -123,7 +129,11 @@ function subscriptionRequest(
   };
 }
 
-function oneTimeRequest(packageName: string, product: MonetizationProduct, converted: ConvertedPrice) {
+function oneTimeRequest(
+  packageName: string,
+  product: MonetizationProduct,
+  converted: ConvertedPrice,
+) {
   return {
     method: 'PATCH' as const,
     url: `${appUrl(packageName)}/onetimeproducts/${encodeURIComponent(product.id)}?updateMask=listings,purchaseOptions&regionsVersion.version=${encodeURIComponent(converted.regionVersion)}&allowMissing=true`,

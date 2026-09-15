@@ -93,6 +93,7 @@
       "path": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
       "isEntrypoint": false,
       "dependencies": [
+        "src/features/monetization/utils/googlePlayMonetizationModel.ts",
         "src/types/googlePlay.ts",
         "src/utils/googlePlayRuntime.ts"
       ],
@@ -502,7 +503,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 25,
+        "line": 29,
         "column": 1
       }
     },
@@ -511,7 +512,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 36,
+        "line": 40,
         "column": 1
       }
     },
@@ -520,7 +521,16 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 74,
+        "line": 64,
+        "column": 1
+      }
+    },
+    {
+      "name": "executePlanAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 80,
         "column": 1
       }
     },
@@ -529,7 +539,25 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 101,
+        "line": 103,
+        "column": 1
+      }
+    },
+    {
+      "name": "subscriptionRequest",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 119,
+        "column": 1
+      }
+    },
+    {
+      "name": "oneTimeRequest",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 132,
         "column": 1
       }
     },
@@ -538,7 +566,34 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 127,
+        "line": 150,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseConvertedPrice",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 167,
+        "column": 1
+      }
+    },
+    {
+      "name": "readOneTimeProductsAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 182,
+        "column": 1
+      }
+    },
+    {
+      "name": "readSubscriptionsAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "line": 195,
         "column": 1
       }
     },
@@ -547,106 +602,16 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 159,
+        "line": 208,
         "column": 1
       }
     },
     {
-      "name": "oneTimePayload",
+      "name": "normalizeProducts",
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 176,
-        "column": 1
-      }
-    },
-    {
-      "name": "subscriptionPayload",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 194,
-        "column": 1
-      }
-    },
-    {
-      "name": "toListings",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 211,
-        "column": 1
-      }
-    },
-    {
-      "name": "normalizeOneTime",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 221,
-        "column": 1
-      }
-    },
-    {
-      "name": "normalizeSubscription",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 231,
-        "column": 1
-      }
-    },
-    {
-      "name": "parseListings",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 247,
-        "column": 1
-      }
-    },
-    {
-      "name": "readFirstBasePrice",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 259,
-        "column": 1
-      }
-    },
-    {
-      "name": "readBasePrice",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 267,
-        "column": 1
-      }
-    },
-    {
-      "name": "toMoney",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 282,
-        "column": 1
-      }
-    },
-    {
-      "name": "fromMoney",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 291,
-        "column": 1
-      }
-    },
-    {
-      "name": "readPeriod",
-      "description": null,
-      "sourceLocation": {
-        "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 307,
+        "line": 222,
         "column": 1
       }
     },
@@ -655,7 +620,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 313,
+        "line": 232,
         "column": 1
       }
     },
@@ -664,7 +629,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 319,
+        "line": 238,
         "column": 1
       }
     },
@@ -673,7 +638,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 323,
+        "line": 242,
         "column": 1
       }
     },
@@ -682,7 +647,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 327,
+        "line": 246,
         "column": 1
       }
     },
@@ -691,7 +656,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "line": 335,
+        "line": 254,
         "column": 1
       }
     },
@@ -1495,6 +1460,11 @@
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
+        "fromPath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
+        "toPath": "src/features/monetization/utils/googlePlayMonetizationModel.ts",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
         "fromPath": "src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts",
         "toPath": "src/types/googlePlay.ts",
         "sourcePath": "src/features/release/adapters/outbound/createGooglePlayReleaseAdapter.ts"
@@ -2074,20 +2044,20 @@
       },
       {
         "fromSymbol": "inspectAsync",
-        "toSymbol": "readCollectionAsync",
-        "callExpression": "readCollectionAsync",
+        "toSymbol": "readOneTimeProductsAsync",
+        "callExpression": "readOneTimeProductsAsync",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
-        "fromSymbol": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "toSymbol": "normalizeOneTime",
-        "callExpression": "normalizeOneTime",
+        "fromSymbol": "inspectAsync",
+        "toSymbol": "readSubscriptionsAsync",
+        "callExpression": "readSubscriptionsAsync",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
-        "fromSymbol": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "toSymbol": "normalizeSubscription",
-        "callExpression": "normalizeSubscription",
+        "fromSymbol": "inspectAsync",
+        "toSymbol": "normalizeProducts",
+        "callExpression": "normalizeProducts",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
@@ -2110,6 +2080,12 @@
       },
       {
         "fromSymbol": "syncAsync",
+        "toSymbol": "executePlanAsync",
+        "callExpression": "executePlanAsync",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "executePlanAsync",
         "toSymbol": "upsertProductAsync",
         "callExpression": "upsertProductAsync",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
@@ -2122,20 +2098,14 @@
       },
       {
         "fromSymbol": "upsertProductAsync",
-        "toSymbol": "appUrl",
-        "callExpression": "appUrl",
+        "toSymbol": "subscriptionRequest",
+        "callExpression": "subscriptionRequest",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
         "fromSymbol": "upsertProductAsync",
-        "toSymbol": "subscriptionPayload",
-        "callExpression": "subscriptionPayload",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "upsertProductAsync",
-        "toSymbol": "oneTimePayload",
-        "callExpression": "oneTimePayload",
+        "toSymbol": "oneTimeRequest",
+        "callExpression": "oneTimeRequest",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
@@ -2151,6 +2121,30 @@
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
+        "fromSymbol": "subscriptionRequest",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "subscriptionRequest",
+        "toSymbol": "createGooglePlaySubscriptionPayload",
+        "callExpression": "createGooglePlaySubscriptionPayload",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "oneTimeRequest",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "oneTimeRequest",
+        "toSymbol": "createGooglePlayOneTimePayload",
+        "callExpression": "createGooglePlayOneTimePayload",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
         "fromSymbol": "convertPriceAsync",
         "toSymbol": "safeGooglePlayRequest",
         "callExpression": "safeGooglePlayRequest",
@@ -2164,8 +2158,8 @@
       },
       {
         "fromSymbol": "convertPriceAsync",
-        "toSymbol": "toMoney",
-        "callExpression": "toMoney",
+        "toSymbol": "toGooglePlayMoney",
+        "callExpression": "toGooglePlayMoney",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
@@ -2176,32 +2170,56 @@
       },
       {
         "fromSymbol": "convertPriceAsync",
+        "toSymbol": "parseConvertedPrice",
+        "callExpression": "parseConvertedPrice",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "parseConvertedPrice",
         "toSymbol": "parseJson",
         "callExpression": "parseJson",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
-        "fromSymbol": "convertPriceAsync",
+        "fromSymbol": "parseConvertedPrice",
         "toSymbol": "isRecord",
         "callExpression": "isRecord",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
-        "fromSymbol": "convertPriceAsync",
+        "fromSymbol": "parseConvertedPrice",
         "toSymbol": "isNonEmptyString",
         "callExpression": "isNonEmptyString",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "readOneTimeProductsAsync",
+        "toSymbol": "readCollectionAsync",
+        "callExpression": "readCollectionAsync",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "readOneTimeProductsAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "readSubscriptionsAsync",
+        "toSymbol": "readCollectionAsync",
+        "callExpression": "readCollectionAsync",
+        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
+      },
+      {
+        "fromSymbol": "readSubscriptionsAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
         "fromSymbol": "readCollectionAsync",
         "toSymbol": "safeGooglePlayRequest",
         "callExpression": "safeGooglePlayRequest",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "readCollectionAsync",
-        "toSymbol": "appUrl",
-        "callExpression": "appUrl",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
@@ -2220,114 +2238,6 @@
         "fromSymbol": "readCollectionAsync",
         "toSymbol": "isRecord",
         "callExpression": "isRecord",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "oneTimePayload",
-        "toSymbol": "toListings",
-        "callExpression": "toListings",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "subscriptionPayload",
-        "toSymbol": "toListings",
-        "callExpression": "toListings",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeOneTime",
-        "toSymbol": "isRecord",
-        "callExpression": "isRecord",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeOneTime",
-        "toSymbol": "isNonEmptyString",
-        "callExpression": "isNonEmptyString",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeOneTime",
-        "toSymbol": "parseListings",
-        "callExpression": "parseListings",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeOneTime",
-        "toSymbol": "readFirstBasePrice",
-        "callExpression": "readFirstBasePrice",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeSubscription",
-        "toSymbol": "isRecord",
-        "callExpression": "isRecord",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeSubscription",
-        "toSymbol": "isNonEmptyString",
-        "callExpression": "isNonEmptyString",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeSubscription",
-        "toSymbol": "readPeriod",
-        "callExpression": "readPeriod",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeSubscription",
-        "toSymbol": "parseListings",
-        "callExpression": "parseListings",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "normalizeSubscription",
-        "toSymbol": "readBasePrice",
-        "callExpression": "readBasePrice",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "toSymbol": "isRecord",
-        "callExpression": "isRecord",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts",
-        "toSymbol": "isNonEmptyString",
-        "callExpression": "isNonEmptyString",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "readFirstBasePrice",
-        "toSymbol": "readBasePrice",
-        "callExpression": "readBasePrice",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "readBasePrice",
-        "toSymbol": "isNonEmptyString",
-        "callExpression": "isNonEmptyString",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "readBasePrice",
-        "toSymbol": "isRecord",
-        "callExpression": "isRecord",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "readBasePrice",
-        "toSymbol": "fromMoney",
-        "callExpression": "fromMoney",
-        "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
-      },
-      {
-        "fromSymbol": "fromMoney",
-        "toSymbol": "isNonEmptyString",
-        "callExpression": "isNonEmptyString",
         "sourcePath": "src/features/monetization/adapters/outbound/createGooglePlayMonetizationAdapter.ts"
       },
       {
