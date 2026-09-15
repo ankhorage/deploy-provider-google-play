@@ -15,7 +15,7 @@ export interface GooglePlayRequest {
   readonly body?: string | Uint8Array;
 }
 
-export interface GooglePlayResponse {
+interface GooglePlayResponse {
   readonly status: number;
   readonly body: string;
 }
