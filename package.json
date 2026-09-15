@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "@ankhorage/contracts": "^19.2.2",
-    "@ankhorage/utility": "^0.8.0"
+    "@ankhorage/utility": "^0.8.0",
+    "google-auth-library": "^10.9.1"
   },
   "devDependencies": {
     "@ankhorage/ankh": "^0.8.13",
