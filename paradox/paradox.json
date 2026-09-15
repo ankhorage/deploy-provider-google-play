@@ -163,6 +163,37 @@
       ]
     },
     {
+      "path": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "src/types/googlePlay.ts",
+        "src/utils/googlePlayRuntime.ts"
+      ],
+      "exports": [
+        "commitGooglePlayEditAsync",
+        "createGooglePlayEditAsync",
+        "discardGooglePlayEditAsync",
+        "readGooglePlayAssetSetAsync",
+        "readGooglePlayListingsAsync",
+        "replaceGooglePlayAssetsAsync",
+        "writeGooglePlayLocaleAsync"
+      ]
+    },
+    {
+      "path": "src/features/store-listing/utils/googlePlayListingModel.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "GOOGLE_PLAY_IMAGE_VARIANTS",
+        "GOOGLE_PLAY_STORE_LISTING_FIELDS",
+        "googlePlayImageTypeFor",
+        "parseGooglePlayImageSet",
+        "parseGooglePlayListings",
+        "toGooglePlayListing"
+      ]
+    },
+    {
       "path": "src/index.test.ts",
       "isEntrypoint": false,
       "dependencies": [
@@ -395,7 +426,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 212,
+        "line": 214,
         "column": 1
       }
     },
@@ -404,7 +435,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 218,
+        "line": 220,
         "column": 1
       }
     },
@@ -413,7 +444,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 230,
+        "line": 232,
         "column": 1
       }
     },
@@ -422,7 +453,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 240,
+        "line": 242,
         "column": 1
       }
     },
@@ -431,7 +462,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 251,
+        "line": 253,
         "column": 1
       }
     },
@@ -440,7 +471,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 262,
+        "line": 264,
         "column": 1
       }
     },
@@ -449,7 +480,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 274,
+        "line": 276,
         "column": 1
       }
     },
@@ -458,7 +489,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 286,
+        "line": 288,
         "column": 1
       }
     },
@@ -467,7 +498,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 297,
+        "line": 299,
         "column": 1
       }
     },
@@ -476,7 +507,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 301,
+        "line": 303,
         "column": 1
       }
     },
@@ -485,7 +516,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 305,
+        "line": 307,
         "column": 1
       }
     },
@@ -494,7 +525,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/android-publication/adapters/outbound/createGooglePlayAndroidPublisher.ts",
-        "line": 309,
+        "line": 311,
         "column": 1
       }
     },
@@ -1273,6 +1304,186 @@
       }
     },
     {
+      "name": "createGooglePlayEditAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 22,
+        "column": 1
+      }
+    },
+    {
+      "name": "commitGooglePlayEditAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 39,
+        "column": 1
+      }
+    },
+    {
+      "name": "discardGooglePlayEditAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 55,
+        "column": 1
+      }
+    },
+    {
+      "name": "readGooglePlayListingsAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 68,
+        "column": 1
+      }
+    },
+    {
+      "name": "readGooglePlayAssetSetAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 84,
+        "column": 1
+      }
+    },
+    {
+      "name": "writeGooglePlayLocaleAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 107,
+        "column": 1
+      }
+    },
+    {
+      "name": "replaceGooglePlayAssetsAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 124,
+        "column": 1
+      }
+    },
+    {
+      "name": "clearImagesAsync",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 154,
+        "column": 1
+      }
+    },
+    {
+      "name": "appUrl",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 170,
+        "column": 1
+      }
+    },
+    {
+      "name": "listingUrl",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 174,
+        "column": 1
+      }
+    },
+    {
+      "name": "imagesUrl",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 178,
+        "column": 1
+      }
+    },
+    {
+      "name": "uploadImageUrl",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 182,
+        "column": 1
+      }
+    },
+    {
+      "name": "isSuccess",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 191,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseJson",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "line": 195,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseGooglePlayListings",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 26,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseGooglePlayImageSet",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 37,
+        "column": 1
+      }
+    },
+    {
+      "name": "toGooglePlayListing",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 58,
+        "column": 1
+      }
+    },
+    {
+      "name": "googlePlayImageTypeFor",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 68,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseListing",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 72,
+        "column": 1
+      }
+    },
+    {
+      "name": "parseJson",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "line": 85,
+        "column": 1
+      }
+    },
+    {
       "name": "resolveSecret",
       "description": null,
       "sourceLocation": {
@@ -1493,6 +1704,21 @@
         "fromPath": "src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts",
         "toPath": "src/utils/googlePlayRuntime.ts",
         "sourcePath": "src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "toPath": "src/types/googlePlay.ts",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromPath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "toPath": "src/utils/googlePlayRuntime.ts",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromPath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts",
+        "toPath": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
       }
     ],
     "calls": [
@@ -1741,6 +1967,60 @@
         "toSymbol": "createGooglePlayReleaseAdapter",
         "callExpression": "createGooglePlayReleaseAdapter",
         "sourcePath": "src/features/provider-registration/composition/createGooglePlayDeploymentProvider.ts"
+      },
+      {
+        "fromSymbol": "parseGooglePlayListings",
+        "toSymbol": "parseJson",
+        "callExpression": "parseJson",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "parseGooglePlayListings",
+        "toSymbol": "isRecord",
+        "callExpression": "isRecord",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "toSymbol": "parseListing",
+        "callExpression": "parseListing",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "parseGooglePlayImageSet",
+        "toSymbol": "parseJson",
+        "callExpression": "parseJson",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "parseGooglePlayImageSet",
+        "toSymbol": "isRecord",
+        "callExpression": "isRecord",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "toSymbol": "isRecord",
+        "callExpression": "isRecord",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "src/features/store-listing/utils/googlePlayListingModel.ts",
+        "toSymbol": "isNonEmptyString",
+        "callExpression": "isNonEmptyString",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "parseListing",
+        "toSymbol": "isRecord",
+        "callExpression": "isRecord",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
+      },
+      {
+        "fromSymbol": "parseListing",
+        "toSymbol": "isNonEmptyString",
+        "callExpression": "isNonEmptyString",
+        "sourcePath": "src/features/store-listing/utils/googlePlayListingModel.ts"
       },
       {
         "fromSymbol": "inspectAsync",
@@ -2941,6 +3221,198 @@
         "toSymbol": "listingUrl",
         "callExpression": "listingUrl",
         "sourcePath": "src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "parseJson",
+        "callExpression": "parseJson",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "isRecord",
+        "callExpression": "isRecord",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "createGooglePlayEditAsync",
+        "toSymbol": "isNonEmptyString",
+        "callExpression": "isNonEmptyString",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "commitGooglePlayEditAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "commitGooglePlayEditAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "commitGooglePlayEditAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "discardGooglePlayEditAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "discardGooglePlayEditAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayListingsAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayListingsAsync",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayListingsAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayListingsAsync",
+        "toSymbol": "parseGooglePlayListings",
+        "callExpression": "parseGooglePlayListings",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayAssetSetAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayAssetSetAsync",
+        "toSymbol": "imagesUrl",
+        "callExpression": "imagesUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayAssetSetAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "readGooglePlayAssetSetAsync",
+        "toSymbol": "parseGooglePlayImageSet",
+        "callExpression": "parseGooglePlayImageSet",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "writeGooglePlayLocaleAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "writeGooglePlayLocaleAsync",
+        "toSymbol": "listingUrl",
+        "callExpression": "listingUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "writeGooglePlayLocaleAsync",
+        "toSymbol": "toGooglePlayListing",
+        "callExpression": "toGooglePlayListing",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "writeGooglePlayLocaleAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "replaceGooglePlayAssetsAsync",
+        "toSymbol": "clearImagesAsync",
+        "callExpression": "clearImagesAsync",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "replaceGooglePlayAssetsAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "replaceGooglePlayAssetsAsync",
+        "toSymbol": "uploadImageUrl",
+        "callExpression": "uploadImageUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "replaceGooglePlayAssetsAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "clearImagesAsync",
+        "toSymbol": "safeGooglePlayRequest",
+        "callExpression": "safeGooglePlayRequest",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "clearImagesAsync",
+        "toSymbol": "imagesUrl",
+        "callExpression": "imagesUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "clearImagesAsync",
+        "toSymbol": "isSuccess",
+        "callExpression": "isSuccess",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "listingUrl",
+        "toSymbol": "appUrl",
+        "callExpression": "appUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
+      },
+      {
+        "fromSymbol": "imagesUrl",
+        "toSymbol": "listingUrl",
+        "callExpression": "listingUrl",
+        "sourcePath": "src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts"
       }
     ],
     "typeReferences": [

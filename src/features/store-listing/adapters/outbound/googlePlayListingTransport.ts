@@ -16,7 +16,8 @@ import {
 } from '../../utils/googlePlayListingModel.js';
 
 const API = 'https://androidpublisher.googleapis.com/androidpublisher/v3/applications';
-const UPLOAD_API = 'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
+const UPLOAD_API =
+  'https://androidpublisher.googleapis.com/upload/androidpublisher/v3/applications';
 
 export async function createGooglePlayEditAsync(
   packageName: string,
@@ -160,12 +161,7 @@ async function clearImagesAsync(options: {
 }): Promise<boolean> {
   const response = await safeGooglePlayRequest(options.transport, {
     method: 'DELETE',
-    url: imagesUrl(
-      options.packageName,
-      options.editId,
-      options.set.locale,
-      options.imageType,
-    ),
+    url: imagesUrl(options.packageName, options.editId, options.set.locale, options.imageType),
     token: options.token,
   });
   return response !== null && isSuccess(response.status);
@@ -179,12 +175,7 @@ function listingUrl(packageName: string, editId: string, locale: string): string
   return `${appUrl(packageName)}/edits/${encodeURIComponent(editId)}/listings/${encodeURIComponent(locale)}`;
 }
 
-function imagesUrl(
-  packageName: string,
-  editId: string,
-  locale: string,
-  imageType: string,
-): string {
+function imagesUrl(packageName: string, editId: string, locale: string, imageType: string): string {
   return `${listingUrl(packageName, editId, locale)}/${encodeURIComponent(imageType)}`;
 }
 

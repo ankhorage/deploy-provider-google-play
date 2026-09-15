@@ -26,7 +26,9 @@ export const GOOGLE_PLAY_IMAGE_VARIANTS = [
 export function parseGooglePlayListings(body: string): readonly StoreListingLocale[] | null {
   const parsed = parseJson(body);
   if (!isRecord(parsed) || !Array.isArray(parsed.listings)) return null;
-  const listings = Array.from(parsed.listings, (value): StoreListingLocale | null => parseListing(value));
+  const listings = Array.from(parsed.listings, (value): StoreListingLocale | null =>
+    parseListing(value),
+  );
   return listings.every((listing): listing is StoreListingLocale => listing !== null)
     ? listings
     : null;
