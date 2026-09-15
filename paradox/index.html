@@ -159,7 +159,7 @@
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts">
       src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts
-      <small>26 functions</small>
+      <small>9 functions</small>
     </button>
   </li><li>
     <button class="nav-button" type="button" data-target="src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts">
@@ -239,10 +239,10 @@
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/types/googlePlay.ts</code>, <code>src/utils/googlePlayRuntime.ts</code></p>
     <p><strong>Exports:</strong> <code>createGooglePlaySetupAdapter</code></p>
-  </article><article class="item" data-search="src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts src/types/googlePlay.ts src/utils/googlePlayRuntime.ts createGooglePlayStoreListingAdapter">
+  </article><article class="item" data-search="src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts src/features/store-listing/utils/googlePlayListingModel.ts src/types/googlePlay.ts src/utils/googlePlayRuntime.ts createGooglePlayStoreListingAdapter">
     <h3>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts</h3>
     <p class="muted">Referenced module</p>
-    <p><strong>Dependencies:</strong> <code>src/types/googlePlay.ts</code>, <code>src/utils/googlePlayRuntime.ts</code></p>
+    <p><strong>Dependencies:</strong> <code>src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts</code>, <code>src/features/store-listing/utils/googlePlayListingModel.ts</code>, <code>src/types/googlePlay.ts</code>, <code>src/utils/googlePlayRuntime.ts</code></p>
     <p><strong>Exports:</strong> <code>createGooglePlayStoreListingAdapter</code></p>
   </article><article class="item" data-search="src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts src/features/store-listing/utils/googlePlayListingModel.ts src/types/googlePlay.ts src/utils/googlePlayRuntime.ts commitGooglePlayEditAsync createGooglePlayEditAsync discardGooglePlayEditAsync readGooglePlayAssetSetAsync readGooglePlayListingsAsync replaceGooglePlayAssetsAsync writeGooglePlayLocaleAsync">
     <h3>src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts</h3>
@@ -387,6 +387,8 @@
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -444,6 +446,8 @@
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts[&quot;src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts&quot;]
   package__ankhorage_deploy_provider_google_play -.-&gt; module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts[&quot;src/features/store-listing/adapters/outbound/googlePlayListingTransport.ts&quot;]
@@ -498,6 +502,8 @@
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
@@ -539,6 +545,8 @@
   module_src_features_release_adapters_outbound_createGooglePlayReleaseAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_setup_adapters_outbound_createGooglePlaySetupAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts
+  module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_types_googlePlay_ts
   module_src_features_store_listing_adapters_outbound_createGooglePlayStoreListingAdapter_ts --&gt; module_src_utils_googlePlayRuntime_ts
   module_src_features_store_listing_adapters_outbound_googlePlayListingTransport_ts --&gt; module_src_features_store_listing_utils_googlePlayListingModel_ts
@@ -1008,107 +1016,39 @@
       <h2>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts</h2>
       <article class="item" data-search="createGooglePlayStoreListingAdapter src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>createGooglePlayStoreListingAdapter</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:34:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:28:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="inspectAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>inspectAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:45:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:39:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="syncAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>syncAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:69:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:72:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="executePlanAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>executePlanAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:94:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:101:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="writeLocaleAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>writeLocaleAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:111:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:118:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="replaceAssetsAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>replaceAssetsAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:130:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="uploadAssetsAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>uploadAssetsAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:155:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:138:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="readStateAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>readStateAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:178:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:164:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="readAssetSetsAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>readAssetSetsAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:198:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="readAssetSetAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>readAssetSetAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:215:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="parseListings src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>parseListings</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:236:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="parseListing src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>parseListing</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:245:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="parseImageHashes src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>parseImageHashes</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:257:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="toGoogleListing src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>toGoogleListing</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:266:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="clearImagesAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>clearImagesAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:276:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="createEditAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>createEditAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:292:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="commitEditAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>commitEditAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:309:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="discardEditAsync src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>discardEditAsync</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:325:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="imageTypeFor src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>imageTypeFor</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:338:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="appUrl src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>appUrl</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:342:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="listingUrl src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>listingUrl</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:346:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="imagesUrl src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>imagesUrl</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:350:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="uploadImageUrl src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>uploadImageUrl</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:354:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="isSuccess src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>isSuccess</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:363:1</code></p>
-    <p class="empty">No description available.</p>
-  </article><article class="item" data-search="parseJson src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
-    <h3>parseJson</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:367:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:184:1</code></p>
     <p class="empty">No description available.</p>
   </article><article class="item" data-search="failed src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts ">
     <h3>failed</h3>
-    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:375:1</code></p>
+    <p class="muted"><code>src/features/store-listing/adapters/outbound/createGooglePlayStoreListingAdapter.ts:209:1</code></p>
     <p class="empty">No description available.</p>
   </article>
     </section>

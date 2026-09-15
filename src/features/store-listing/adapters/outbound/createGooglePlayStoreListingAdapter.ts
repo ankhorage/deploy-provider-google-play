@@ -11,6 +11,11 @@ import type {
 import type { GooglePlayTokenFactory, GooglePlayTransport } from '../../../../types/googlePlay.js';
 import { resolveGooglePlayAccessTokenAsync } from '../../../../utils/googlePlayRuntime.js';
 import {
+  GOOGLE_PLAY_IMAGE_VARIANTS,
+  GOOGLE_PLAY_STORE_LISTING_FIELDS,
+  googlePlayImageTypeFor,
+} from '../../utils/googlePlayListingModel.js';
+import {
   commitGooglePlayEditAsync,
   createGooglePlayEditAsync,
   discardGooglePlayEditAsync,
@@ -19,11 +24,6 @@ import {
   replaceGooglePlayAssetsAsync,
   writeGooglePlayLocaleAsync,
 } from './googlePlayListingTransport.js';
-import {
-  GOOGLE_PLAY_IMAGE_VARIANTS,
-  GOOGLE_PLAY_STORE_LISTING_FIELDS,
-  googlePlayImageTypeFor,
-} from '../../utils/googlePlayListingModel.js';
 
 export function createGooglePlayStoreListingAdapter(options: {
   readonly createToken: GooglePlayTokenFactory;
@@ -106,9 +106,10 @@ async function executePlanAsync(
 ): Promise<boolean> {
   for (const step of request.plan.steps) {
     if (step.target !== 'android') continue;
-    const success = step.operation === 'replace-assets'
-      ? await replaceAssetsAsync(request, step.locale, step.variant, editId, token, transport)
-      : await writeLocaleAsync(request, step.locale, editId, token, transport);
+    const success =
+      step.operation === 'replace-assets'
+        ? await replaceAssetsAsync(request, step.locale, step.variant, editId, token, transport)
+        : await writeLocaleAsync(request, step.locale, editId, token, transport);
     if (!success) return false;
   }
   return true;
