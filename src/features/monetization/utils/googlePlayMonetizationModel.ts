@@ -18,12 +18,15 @@ export function normalizeGooglePlayOneTime(value: unknown): MonetizationObserved
   };
 }
 
-export function normalizeGooglePlaySubscription(value: unknown): MonetizationObservedProduct | null {
+export function normalizeGooglePlaySubscription(
+  value: unknown,
+): MonetizationObservedProduct | null {
   if (!isRecord(value) || !isNonEmptyString(value.productId)) return null;
   const basePlan = firstRecord(value.basePlans);
-  const period = basePlan === null || !isRecord(basePlan.autoRenewingBasePlanType)
-    ? null
-    : readPeriod(basePlan.autoRenewingBasePlanType.billingPeriodDuration);
+  const period =
+    basePlan === null || !isRecord(basePlan.autoRenewingBasePlanType)
+      ? null
+      : readPeriod(basePlan.autoRenewingBasePlanType.billingPeriodDuration);
   return {
     id: value.productId,
     kind: 'subscription',
