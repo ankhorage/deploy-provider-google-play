@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/deploy-provider-google-play",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "Google Play deployment provider for Ankhorage application shipment.",
   "license": "MIT",
