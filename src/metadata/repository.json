@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "adapter",
+  "title": "Ankhorage Google Play Deployment Provider",
+  "summary": "Provides a Google Play deployment provider for Ankhorage application shipment.",
+  "purpose": "Isolate Google Play deployment behavior behind a provider boundary.",
+  "domain": "application deployment",
+  "responsibilities": [
+    "Provide the Google Play deployment provider composition.",
+    "Adapt Google Play-specific deployment behavior to the deployment-provider boundary."
+  ],
+  "boundaries": [
+    "Does not own deployment orchestration or cross-provider release policy.",
+    "Does not implement other deployment providers."
+  ],
+  "audience": [
+    "Applications and deployment tooling that select a deployment provider."
+  ],
+  "useCases": [
+    "Compose Google Play-backed application deployment."
+  ],
+  "architecture": {
+    "role": "An outbound deployment-provider adapter with an explicit composition entrypoint.",
+    "invariants": [
+      "Google Play-specific behavior remains behind the provider boundary."
+    ]
+  },
+  "constraints": {
+    "platforms": [
+      "Google Play"
+    ],
+    "limitations": [
+      "Only Google Play-backed deployment is provided."
+    ]
+  }
+}
