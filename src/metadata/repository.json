@@ -13,24 +13,14 @@
     "Does not own deployment orchestration or cross-provider release policy.",
     "Does not implement other deployment providers."
   ],
-  "audience": [
-    "Applications and deployment tooling that select a deployment provider."
-  ],
-  "useCases": [
-    "Compose Google Play-backed application deployment."
-  ],
+  "audience": ["Applications and deployment tooling that select a deployment provider."],
+  "useCases": ["Compose Google Play-backed application deployment."],
   "architecture": {
     "role": "An outbound deployment-provider adapter with an explicit composition entrypoint.",
-    "invariants": [
-      "Google Play-specific behavior remains behind the provider boundary."
-    ]
+    "invariants": ["Google Play-specific behavior remains behind the provider boundary."]
   },
   "constraints": {
-    "platforms": [
-      "Google Play"
-    ],
-    "limitations": [
-      "Only Google Play-backed deployment is provided."
-    ]
+    "platforms": ["Google Play"],
+    "limitations": ["Only Google Play-backed deployment is provided."]
   }
 }
